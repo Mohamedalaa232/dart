@@ -1,0 +1,26 @@
+import 'dart:math';
+
+int? generateRandom() {
+  Random random = Random();
+  return random.nextBool() ? 100 : null;
+}
+
+int checkValue(int? value) {
+  return value ?? 0;
+}
+
+void main() {
+  int? age = null;
+  late String address;
+  address = "USA";
+  print(address);
+  print(age);
+
+  int result1 = checkValue(null);
+  int result2 = checkValue(10);
+  print(result1);
+  print(result2);
+
+  int status = generateRandom() ?? 0;
+  print("Status: $status");
+}
