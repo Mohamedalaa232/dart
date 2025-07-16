@@ -1,0 +1,64 @@
+// Assignment 1: Count the number of even digits in a given sentence
+void main() {
+  String text = "I have 2 apples and 4 bananas";
+  List<String> chars = text.split('');
+  int evenCount = chars.where((c) => '02468'.contains(c)).length;
+
+  print("Even digits count: $evenCount");
+}
+
+// Assignment 2: Calculate the sum of squares of numbers in a list
+void assignment2() {
+  List<int> nums = [1, 2, 3, 4];
+  int total = nums.map((n) => n * n).reduce((a, b) => a + b);
+  print("Sum of squares: $total");
+}
+
+// Assignment 3: Remove duplicates
+ and print names in reverse order
+void assignment3() {
+  List<String> names = ['Ali', 'Mona', 'Ali', 'Sara'];
+  Set<String> unique = names.toSet();
+  List<String> reversed = unique.toList().reversed.toList();
+
+  print("Unique names reversed: $reversed");
+}
+
+// Assignment 4: Check if a given ID exists in a set
+void assignment4() {
+  Set<int> ids = {1001, 1002, 1003};
+  int target = 1002;
+
+  print(ids.contains(target) ? "ID found" : "ID not found");
+}
+
+// Assignment 5: Update scores by adding 5, treating null as 0
+void assignment5() {
+  Map<String, int?> scores = {'Ahmed': 80, 'Sara': null};
+
+  scores.forEach((key, value) {
+    scores[key] = (value ?? 0) + 5;
+  });
+
+  print("Updated scores: $scores");
+}
+
+// Assignment 6: Simulate data fetching using Future and async/await
+Future<List<String>> fetchCourses() async {
+  await Future.delayed(Duration(seconds: 1));
+  return ['Dart', 'Flutter', 'Firebase'];
+}
+
+void assignment6() async {
+  print("Loading courses...");
+  List<String> courses = await fetchCourses();
+  print("Courses: $courses");
+}
+
+// Assignment 7: Use ternary operator to determine temperature status
+String checkTemp(int t) => t > 30 ? "Hot" : "Cold";
+
+void assignment7() {
+  int temp = 28;
+  print("Weather: \${checkTemp(temp)}");
+}
